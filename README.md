@@ -6,7 +6,7 @@ This project provides a simple pipeline to localize Scene in an image using a na
 
 Open this repository in Google Colab:
 
-Open Colab, then File → Open notebook → GitHub and paste your repo URL.
+Open Colab, then File → Open notebook → GitHub and paste this repo URL.
 
 Navigate to Notebooks/Inference_file.ipynb and open it.
 
@@ -32,22 +32,18 @@ IMAGE_PATH = "/content/your_image.jpg"  # <<--- PASTE your uploaded image path b
 
 How to upload the image in Colab:
 
-Drag-and-drop the file into the left Files pane in Colab, or run:
-
-from google.colab import files
-uploaded = files.upload()
+Drag-and-drop the file into the left Files pane in Colab
 
 
 Then use the uploaded filename in IMAGE_PATH, e.g. "/content/myphoto.jpg".
 
 Cell 3 (or the cell that defines queries) — set the query
-Find the cell that holds SAMPLE_QUERIES or similar and replace it with the line below (or paste it if it’s not present):
+Find the cell that holds SAMPLE_QUERIES or similar and replace it with the line below 
 
 # Cell 3 — replace with the text query you want to test
 SAMPLE_QUERIES = ["a red car on the street"]  # <<--- REPLACE this string with your query
 
 
-(If the notebook uses a different variable name for queries, edit that variable the same way.)
 
 Run the notebook
 
@@ -59,16 +55,10 @@ The notebook will:
 
 Install required libraries (if not already installed in the Colab session).
 
-Download / load model weights (ensure the notebook’s Google Drive links are shareable).
-
 Load your image and run Grounding DINO to get candidate boxes.
 
 Re-rank boxes using CLIP and display the best matches (visualized in the notebook output).
 
 Notes & tips
-
-If model downloads fail due to Drive permissions, set the Drive file to Anyone with the link or provide direct links the notebook expects.
-
 If you want faster iterations, use Colab Pro for higher chance of getting T4 or faster GPUs.
 
-If anything errors while running, copy the notebook cell error and paste it here — I can help debug.
